@@ -1,0 +1,81 @@
+﻿@{
+    string studentName = "Rodriguez, Yuan Jasper";
+    int score = 87;
+    bool isPassed = (score >= 75);
+    DateTime examDate = DateTime.Now;
+    decimal tuitionFee = 15500.75m;
+    string[] courses = [ "IT Elecive 2", "SAM", "SADD", "ADET", "IPG", "KKF" ];
+    int allCourses = courses.Length;
+    decimal tuition = tuitionFee;
+    decimal discount = 10;
+    Student yuan = new Student();
+        yuan.Name = "Yuan Rodriguez";
+        yuan.Age = "21";
+        yuan.Course = "IT Elective 2"; 
+        
+        Student maria = new Student();
+        maria.Name = "Maria Santos";
+        maria.Age = "20";
+        maria.Course = "Web Systems";
+        
+        Student pedro = new Student();
+        pedro.Name = "Pedro Ramirez";
+        pedro.Age = "21";
+        pedro.Course = "OOP";
+        
+        Student angelica = new Student();
+        angelica.Name = "Angelica Reyes";
+        angelica.Age = "22";
+        angelica.Course = "DBMS";
+}
+}
+@{
+    string grade;
+    if (score >= 90)
+    {
+        grade = "A";
+    }
+    else if (score >= 80)
+    {
+        grade = "B";
+    }
+    else if (score >= 75)
+    {
+        grade = "C";
+    }
+    else
+    {
+        grade = "F";
+    }
+
+    string ifMessage;
+    if (isPassed)
+    {
+        ifMessage = "Congratulations, you passed!";
+    }
+    else
+    {
+        ifMessage = "Better luck next time.";
+    }
+}
+
+<div class="text-center">
+    <h1> Student: @studentName </h1>
+    <h1> Score: @score </h1>
+    <h1> Grade: @grade </h1>
+    <h1> Message: @ifMessage </h1>
+    <h1> Number of Courses: @allCourses </h1>
+    @foreach (var course in courses)
+    {
+        <h1> Courses Taken: @course </h1>
+    }
+    <h1> Today is: @examDate </h1>
+    <h1> Tuition: @tuitionFee </h1>
+    <h1> Discount: @discount </h1>
+
+    <h1> Student Details: @yuan.Name, @yuan.Age, @yuan.Course </h1>
+    <h1> Student Details: @maria.Name, @maria.Age, @maria.Course </h1>
+    <h1> Student Details: @pedro.Name, @pedro.Age, @pedro.Course </h1>
+    <h1> Student Details: @angelica.Name, @angelica.Age, @angelica.Course </h1>
+</div>
+}
